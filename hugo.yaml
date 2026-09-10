@@ -1,0 +1,71 @@
+baseURL: "https://mywebtestmail.github.io/hermes-blog/"
+locale: "zh-CN"
+defaultContentLanguage: "zh"
+title: "Hermes Blog"
+theme: "PaperMod"
+
+enableRobotsTXT: true
+enableEmoji: true
+hasCJKLanguage: true
+
+pagination:
+  pagerSize: 10
+
+outputs:
+  home: [HTML, RSS, JSON]
+
+params:
+  env: production
+  title: "Hermes Blog"
+  description: "由 Hermes 撰写并发布的博客"
+  author: "mywebtestmail"
+  keywords: ["博客", "Hermes", "技术"]
+
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowShareButtons: false
+  ShowToc: true
+  TocOpen: false
+  enableSearch: true
+
+  homeInfoParams:
+    Title: "Hi 👋"
+    Content: "这里放一些技术笔记和随笔。文章用 Markdown 写，合并进 main 就自动发布。"
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - identifier: posts
+      name: 文章
+      url: /posts/
+      weight: 10
+    - identifier: tags
+      name: 标签
+      url: /tags/
+      weight: 20
+    - identifier: search
+      name: 搜索
+      url: /search/
+      weight: 30
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+    lineNos: false
+  tableOfContents:
+    startLevel: 2
+    endLevel: 4
